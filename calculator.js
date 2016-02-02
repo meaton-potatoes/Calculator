@@ -4,7 +4,7 @@ var stringArray2;
 var temp;
 var output = "";
 var usedIndex = [];
-operationsArray = ["*", "/", "%", "+", "-"];
+operationsArray = [" * ", " / ", " % ", " + ", " - "];
 
 var counter = 0;
 var output = "";
@@ -18,25 +18,36 @@ $("button").on("click", function(){
 	if (number) {
 		output += this.value;
 		$("#result").val(output);
+		counter++;
 	} else if (operator) {
-		tempOperator2 = this.value;
-		if (isNaN(tempValue)) {
-			//if there is a tempOperator and NOT a tempValue = not ready to evalue
-			tempValue = parseFloat(output);
-			output = "";
-			tempOperator = this.value;
-			$("#result").val(tempOperator);
+		if (counter === 0) {
+			return;
+		} else if (isNaN(parseFloat(output))) {
+			tempOperator2 = this.value;
+			$("#result").val(tempOperator2);
 			tempOperator1 = tempOperator2;
 		} else {
+			console.log("tempValue: " + tempValue + ", tempOperator1: " + tempOperator1 + ", tempOperator2: " + tempOperator2);
 			tempOperator2 = this.value;
-			//if there is a tempOperator AND a tempValue = ready to evaluate
-			tempValue = evaluateAll(tempValue, tempOperator1, output);
-			output = "";
-			$("#result").val(tempValue);
-			tempOperator1 = tempOperator2;
+			if (isNaN(tempValue)) {
+				//if there is a tempOperator and NOT a tempValue = not ready to evalue
+				tempValue = parseFloat(output);
+				output = "";
+				tempOperator = this.value;
+				$("#result").val(tempOperator);
+				tempOperator1 = tempOperator2;
+			} else {
+				tempOperator2 = this.value;
+				//if there is a tempOperator AND a tempValue = ready to evaluate
+				tempValue = evaluateAll(tempValue, tempOperator1, output);
+				output = "";
+				$("#result").val(tempValue);
+				tempOperator1 = tempOperator2;
+			}
+			counter++;
 		}
 	} else if (this.value === "clearEverything") {
-		output = "", tempValue = undefined, tempOperator = undefined;
+		output = "", tempValue = undefined, tempOperator = undefined, counter = 0;
 		$("#result").val(output);
 	} else if (this.value === " = ") {
 		tempValue = evaluateAll(tempValue, tempOperator2, output);
