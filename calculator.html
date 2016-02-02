@@ -1,90 +1,74 @@
-<!DOCTYPE html>
-	<html>
-	<head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	  <title>Calculator</title>
-	  <link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	  <link rel="stylesheet" href="calculator.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	  <script src="calculator.js"></script>
-	</head>
+<link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
 
-
-
-	<body>
-		<div id="main">
-			<h1>Calculator</h1>
-			<table>
-				<tr>
-					<td colspan="4"><input type="text" class="btn btn-default" id="result" disabled></input></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<button type="button" class="btn btn-default btn-lg" id="ce-button" value="clearEverything">CE</button>
-					</td>
-					<td>
-						<button type="button" class="btn btn-default btn-lg" value=" % " class="operation">%</button>
-					</td>
-					<td>
-						<button type="button" value=" / " class="operation btn btn-default btn-lg">÷</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button" value="1" class="number btn btn-default btn-lg">1</button>
-					</td>
-					<td>
-						<button type="button" value="2" class="number btn btn-default btn-lg">2</button> 
-					</td>
-					<td>
-						<button type="button" value="3" class="number btn btn-default btn-lg">3</button>
-					</td>
-					<td>
-						<button type="button" value=" * " class="operation btn btn-default btn-lg">x</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button" value="4" class="number btn btn-default btn-lg">4</button>
-					</td>
-					<td>
-						<button type="button" value="5" class="number btn btn-default btn-lg">5</button>
-					</td>
-					<td>
-						<button type="button" value="6" class="number btn btn-default btn-lg">6</button>
-					</td>
-					<td>
-						<button type="button" value=" - " class="operation btn btn-default btn-lg">-</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button" value="7" class="number btn btn-default btn-lg">7</button>
-					</td>
-					<td>
-						<button type="button" value="8" class="number btn btn-default btn-lg">8</button>
-					</td>
-					<td>
-						<button type="button" value="9" class="number btn btn-default btn-lg">9</button>
-					</td>
-					<td rowspan="2">
-						<button type="button" id="plus-btn" value=" + " class="operation btn btn-default btn-lg">+</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="button" value="0" class="number btn btn-default btn-lg">0</button>
-					</td>
-					<td>
-						<button type="button" value="." class="number btn btn-default btn-lg">.</button>
-					</td>
-					<td>
-						<button type="button" value=" = " class="btn btn-default btn-lg">=</button>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</body>
-</htmL>
+<div id="main">
+	<h1>Calculator</h1>
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" class="btn btn-default" id="result" disabled></input></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button type="button" class="btn btn-default btn-lg" id="ce-button" value="clearEverything">CE</button>
+			</td>
+			<td>
+				<button type="button" class="operator btn btn-default btn-lg" value=" % ">%</button>
+			</td>
+			<td>
+				<button type="button" value=" / " class="operator btn btn-default btn-lg">÷</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" value="1" class="number btn btn-default btn-lg">1</button>
+			</td>
+			<td>
+				<button type="button" value="2" class="number btn btn-default btn-lg">2</button> 
+			</td>
+			<td>
+				<button type="button" value="3" class="number btn btn-default btn-lg">3</button>
+			</td>
+			<td>
+				<button type="button" value=" * " class="operator btn btn-default btn-lg">x</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" value="4" class="number btn btn-default btn-lg">4</button>
+			</td>
+			<td>
+				<button type="button" value="5" class="number btn btn-default btn-lg">5</button>
+			</td>
+			<td>
+				<button type="button" value="6" class="number btn btn-default btn-lg">6</button>
+			</td>
+			<td>
+				<button type="button" value=" - " class="operator btn btn-default btn-lg">-</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" value="7" class="number btn btn-default btn-lg">7</button>
+			</td>
+			<td>
+				<button type="button" value="8" class="number btn btn-default btn-lg">8</button>
+			</td>
+			<td>
+				<button type="button" value="9" class="number btn btn-default btn-lg">9</button>
+			</td>
+			<td rowspan="2">
+				<button type="button" id="plus-btn" value=" + " class="operator btn btn-default btn-lg">+</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" value="0" class="number btn btn-default btn-lg">0</button>
+			</td>
+			<td>
+				<button type="button" value="." class="number btn btn-default btn-lg">.</button>
+			</td>
+			<td>
+				<button type="button" value=" = " id="equals" class="btn btn-default btn-lg">=</button>
+			</td>
+		</tr>
+	</table>
+</div>
