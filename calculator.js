@@ -27,7 +27,7 @@ $("button").on("click", function(){
 			$("#result").val(tempOperator2);
 			tempOperator1 = tempOperator2;
 		} else {
-			console.log("tempValue: " + tempValue + ", tempOperator1: " + tempOperator1 + ", tempOperator2: " + tempOperator2);
+			// console.log("tempValue: " + tempValue + ", tempOperator1: " + tempOperator1 + ", tempOperator2: " + tempOperator2);
 			tempOperator2 = this.value;
 			if (isNaN(tempValue)) {
 				//if there is a tempOperator and NOT a tempValue = not ready to evalue
@@ -50,10 +50,15 @@ $("button").on("click", function(){
 		output = "", tempValue = undefined, tempOperator = undefined, counter = 0;
 		$("#result").val(output);
 	} else if (this.value === " = ") {
-		tempValue = evaluateAll(tempValue, tempOperator2, output);
-		output = tempValue;
-		$("#result").val(output);
-		tempValue = undefined, tempOperator1 = undefined, tempOperator2 = undefined;
+		// console.log(tempValue + ", " + tempOperator1 + ", "+ tempOperator2 + "," + output);
+		if (tempValue === undefined) {
+			return;
+		} else {
+			tempValue = evaluateAll(tempValue, tempOperator2, output);
+			output = tempValue;
+			$("#result").val(output);
+			tempValue = undefined, tempOperator1 = undefined, tempOperator2 = undefined;
+		}
 	}
 });
 
