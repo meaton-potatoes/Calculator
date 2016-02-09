@@ -52,7 +52,7 @@ $("button").on("click", function(){
 		$("#result").val(output);
 	} else if (this.value === " = ") {
 		// console.log(tempValue + ", " + tempOperator1 + ", "+ tempOperator2 + "," + output);
-		if (tempValue === undefined) {
+		if (tempOperator1 === undefined) {
 			return;
 		} else {
 			tempValue = evaluateAll(tempValue, tempOperator2, output);
