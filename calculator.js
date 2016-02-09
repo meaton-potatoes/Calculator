@@ -6,6 +6,7 @@ var output = "";
 var usedIndex = [];
 operationsArray = [" * ", " / ", " % ", " + ", " - "];
 
+
 var counter = 0;
 var output = "";
 var tempValue;
